@@ -148,6 +148,37 @@
   }
   .btn-ghost:hover { border-color: var(--gold); background: rgba(201,169,110,0.07); transform: translateY(-2px); }
 
+  .amazon-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 16px 32px;
+
+    background: rgba(10,10,10,0.85);
+    border: 1px solid rgba(201,158,74,0.5);
+
+    color: #c99e4a;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    transition: 0.3s ease;
+    box-shadow: 0 0 20px rgba(201,158,74,0.08);
+}
+
+.amazon-btn:hover{
+    background: rgba(20,20,20,1);
+    border-color: #c99e4a;
+    box-shadow: 0 0 25px rgba(201,158,74,0.2);
+}
+
+.amazon-logo{
+    height: 26px;
+    width: auto;
+    object-fit: contain;
+}
+
   /* ── SCROLL ARROW ── */
   .hero-scroll {
     position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
@@ -455,7 +486,9 @@
         Discover the Collection
       </a>
       <!-- Amozon Link -->
-      <a href="https://www.amazon.com" target="_blank" rel="nofollow sponsored" class="btn-ghost">Shop Amazon ↗</a>
+      <a href="https://www.amazon.com" target="_blank" rel="nofollow sponsored" class="btn-ghost amazon-btn">
+    <img src="images/AmazonLogoLight.png" alt="Amazon Logo" class="amazon-logo">
+    <span>Shop Amazon</span></a>
     </div>
   </div>
   <div class="hero-scroll">
