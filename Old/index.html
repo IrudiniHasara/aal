@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Witch's Store – Curated Finds · Timeless Beauty · Everyday Magic</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #080608;
+    --dark: #0e0b10;
+    --gold: #c9a96e;
+    --gold-light: #e2c992;
+    --gold-dim: #7a5c30;
+    --smoke: rgba(201,169,110,0.07);
+    --text: #e8dcc8;
+    --text-dim: #9a8a72;
+    --border: rgba(201,169,110,0.2);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* ── CUSTOM CURSOR ── */
+  .cursor {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    position: fixed; top: 0; left: 0;
+    pointer-events: none; z-index: 9999;
+    transition: transform 0.15s ease;
+    mix-blend-mode: screen;
+  }
+  .cursor-ring {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    position: fixed; top: 0; left: 0;
+    pointer-events: none; z-index: 9998;
+    transition: transform 0.35s ease, opacity 0.3s;
+    opacity: 0.5;
+  }
+
+  /* ── FLOATING PARTICLES ── */
+  #particles { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+  .particle {
+    position: absolute;
+    width: 2px; height: 2px;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0;
+    animation: float-up var(--dur) var(--delay) infinite ease-in-out;
+  }
+  @keyframes float-up {
+    0%   { opacity: 0; transform: translateY(0) scale(0.5); }
+    20%  { opacity: 0.6; }
+    80%  { opacity: 0.3; }
+    100% { opacity: 0; transform: translateY(-120vh) scale(1.5); }
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 48px;
+    background: linear-gradient(180deg, rgba(8,6,8,0.98) 0%, rgba(8,6,8,0.0) 100%);
+    transition: background 0.4s;
+  }
+  nav.scrolled { background: rgba(8,6,8,0.97); border-bottom: 1px solid var(--border); }
+
+  .nav-logo img { height: 54px; filter: drop-shadow(0 0 12px rgba(201,169,110,0.5)); }
+
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    font-family: 'Cinzel', serif;
+    font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--text-dim); text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+    height: 1px; background: var(--gold);
+    transform: scaleX(0); transition: transform 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; height: 100vh; min-height: 700px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('BG_1.jpg');
+    background-size: cover; background-position: center;
+    filter: brightness(0.35) saturate(0.7);
+    transform: scale(1.05);
+    animation: subtle-zoom 20s ease-in-out infinite alternate;
+  }
+  @keyframes subtle-zoom {
+    from { transform: scale(1.05); }
+    to   { transform: scale(1.12); }
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 50%, transparent 20%, rgba(8,6,8,0.7) 70%, var(--black) 100%);
+  }
+  .hero-vignette {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(8,6,8,0.4) 0%, transparent 30%, transparent 70%, var(--black) 100%);
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    text-align: center; padding: 0 24px;
+    animation: fade-rise 1.4s cubic-bezier(0.22,1,0.36,1) both;
+  }
+  @keyframes fade-rise {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-logo { width: 160px; margin: 0 auto 24px; filter: drop-shadow(0 0 30px rgba(201,169,110,0.6)); }
+
+  .hero-eyebrow {
+    font-family: 'Cinzel', serif; font-size: 10px;
+    letter-spacing: 5px; color: var(--gold);
+    text-transform: uppercase; margin-bottom: 16px;
+    animation: fade-rise 1.4s 0.2s cubic-bezier(0.22,1,0.36,1) both;
+  }
+
+  .hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(20px, 7vw, 19px);
+    font-weight: 700; line-height: 1.05;
+    color: var(--gold-light);
+    text-shadow: 0 0 60px rgba(201,169,110,0.4), 0 0 120px rgba(201,169,110,0.15);
+    margin-bottom: 16px;
+    animation: fade-rise 1.4s 0.4s cubic-bezier(0.22,1,0.36,1) both;
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 2.5vw, 22px);
+    font-style: italic; color: var(--text-dim);
+    max-width: 520px; margin: 0 auto 40px;
+    animation: fade-rise 1.4s 0.6s cubic-bezier(0.22,1,0.36,1) both;
+  }
+
+  .hero-cta {
+    display: inline-flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+    animation: fade-rise 1.4s 0.8s cubic-bezier(0.22,1,0.36,1) both;
+  }
+
+  .btn-primary {
+    font-family: 'Cinzel', serif; font-size: 20px;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    padding: 14px 90px;
+    background: linear-gradient(135deg, var(--gold-dim), var(--gold), var(--gold-dim));
+    background-size: 200% 100%;
+    color: var(--black); border: none; cursor: pointer;
+    text-decoration: none;
+    transition: background-position 0.4s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 20px rgba(201,169,110,0.25);
+  }
+  .btn-primary:hover {
+    background-position: 100% 0;
+    transform: translateY(-2px);
+    box-shadow: 0 0 40px rgba(201,169,110,0.45);
+  }
+
+  .btn-ghost {
+    font-family: 'Cinzel', serif; font-size: 20px;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    padding: 14px 36px;
+    background: transparent;
+    color: var(--gold); border: 1px solid var(--gold-dim);
+    cursor: pointer; text-decoration: none;
+    transition: border-color 0.3s, background 0.3s, transform 0.3s;
+  }
+  .btn-ghost:hover {
+    border-color: var(--gold);
+    background: rgba(201,169,110,0.07);
+    transform: translateY(-2px);
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    display: flex; align-items: center; gap: 16px;
+    margin: 0 auto 64px; max-width: 320px;
+  }
+  .divider::before, .divider::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+  }
+  .divider-star { color: var(--gold); font-size: 14px; }
+
+  /* ── SECTIONS ── */
+  section { position: relative; z-index: 1; }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .section-label {
+    font-family: 'Cinzel', serif; font-size: 10px;
+    letter-spacing: 4px; color: var(--gold);
+    text-transform: uppercase; margin-bottom: 12px;
+    display: block;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 600; color: var(--gold-light);
+    text-shadow: 0 0 40px rgba(201,169,110,0.2);
+    margin-bottom: 14px;
+  }
+  .section-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-style: italic;
+    color: var(--text-dim); max-width: 480px; margin: 0 auto;
+  }
+
+  /* ── MARQUEE ── */
+  .marquee-wrap {
+    overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    padding: 18px 0; margin-bottom: 100px;
+    background: var(--smoke);
+  }
+  .marquee-track {
+    display: flex; gap: 48px;
+    animation: marquee 25s linear infinite;
+    width: max-content;
+  }
+  .marquee-item {
+    font-family: 'Cinzel', serif; font-size: 11px;
+    letter-spacing: 3px; color: var(--gold-dim);
+    text-transform: uppercase; white-space: nowrap;
+    display: flex; align-items: center; gap: 24px;
+  }
+  .marquee-item .sep { color: var(--gold); font-size: 16px; }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── CATEGORIES GRID ── */
+  .categories { padding: 100px 48px; }
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2px; max-width: 1300px; margin: 0 auto;
+  }
+
+  .cat-card {
+    position: relative; overflow: hidden;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+    group: true;
+  }
+  .cat-card-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--dark) 0%, #1a1020 100%);
+    transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+  }
+  .cat-card:hover .cat-card-bg { transform: scale(1.04); }
+
+  .cat-card-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(8,6,8,0.95) 100%);
+  }
+  .cat-card-icon {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -60%);
+    font-size: 64px; opacity: 0.12;
+    transition: opacity 0.4s, transform 0.4s;
+  }
+  .cat-card:hover .cat-card-icon { opacity: 0.06; transform: translate(-50%, -65%) scale(1.1); }
+
+  .cat-card-content {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 32px 28px;
+    transform: translateY(8px);
+    transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
+  }
+  .cat-card:hover .cat-card-content { transform: translateY(0); }
+
+  .cat-num {
+    font-family: 'Cinzel', serif; font-size: 10px;
+    letter-spacing: 3px; color: var(--gold-dim);
+    margin-bottom: 8px; display: block;
+  }
+  .cat-name {
+    font-family: 'Cinzel', serif; font-size: 22px;
+    font-weight: 600; color: var(--gold-light);
+    margin-bottom: 8px;
+  }
+  .cat-desc {
+    font-size: 14px; color: var(--text-dim);
+    font-style: italic; margin-bottom: 16px;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.4s 0.05s, transform 0.4s 0.05s;
+  }
+  .cat-card:hover .cat-desc { opacity: 1; transform: translateY(0); }
+
+  .cat-link {
+    font-family: 'Cinzel', serif; font-size: 10px;
+    letter-spacing: 2.5px; color: var(--gold);
+    text-decoration: none; text-transform: uppercase;
+    display: inline-flex; align-items: center; gap: 8px;
+    opacity: 0; transition: opacity 0.4s 0.1s;
+  }
+  .cat-card:hover .cat-link { opacity: 1; }
+  .cat-link::after { content: '→'; transition: transform 0.3s; }
+  .cat-link:hover::after { transform: translateX(4px); }
+
+  .cat-border {
+    position: absolute; inset: 0;
+    border: 1px solid transparent;
+    transition: border-color 0.4s;
+    pointer-events: none;
+  }
+  .cat-card:hover .cat-border { border-color: var(--border); }
+
+  /* decorative gradients per card */
+  .cat-card:nth-child(1) .cat-card-bg { background: linear-gradient(135deg, #140d1a 0%, #1f0d20 100%); }
+  .cat-card:nth-child(2) .cat-card-bg { background: linear-gradient(135deg, #0d1214 0%, #0d1a18 100%); }
+  .cat-card:nth-child(3) .cat-card-bg { background: linear-gradient(135deg, #14100d 0%, #1a140d 100%); }
+  .cat-card:nth-child(4) .cat-card-bg { background: linear-gradient(135deg, #0d0d1a 0%, #14101f 100%); }
+
+  /* ── FEATURED / PRODUCTS ── */
+  .products { padding: 100px 48px; background: var(--dark); }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px; max-width: 1300px; margin: 0 auto;
+  }
+
+  .product-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    position: relative; overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s;
+    cursor: pointer;
+  }
+  .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 30px rgba(201,169,110,0.08);
+  }
+
+  .product-badge {
+    position: absolute; top: 16px; left: 16px; z-index: 2;
+    font-family: 'Cinzel', serif; font-size: 9px;
+    letter-spacing: 2px; padding: 5px 12px;
+    background: var(--gold); color: var(--black);
+    text-transform: uppercase;
+  }
+
+  .product-img {
+    width: 100%; aspect-ratio: 1/1;
+    object-fit: cover; display: block;
+    filter: saturate(0.6) brightness(0.8);
+    transition: filter 0.4s, transform 0.4s;
+  }
+  .product-card:hover .product-img {
+    filter: saturate(0.85) brightness(0.9);
+    transform: scale(1.03);
+  }
+  .product-img-placeholder {
+    width: 100%; aspect-ratio: 1/1;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 72px;
+    background: linear-gradient(135deg, #18101e, #0e0b14);
+    transition: transform 0.4s;
+  }
+  .product-card:hover .product-img-placeholder { transform: scale(1.03); }
+
+  .product-info { padding: 20px 22px 24px; }
+
+  .product-cat {
+    font-family: 'Cinzel', serif; font-size: 9px;
+    letter-spacing: 3px; color: var(--gold-dim);
+    text-transform: uppercase; margin-bottom: 8px; display: block;
+  }
+  .product-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 600;
+    color: var(--text); margin-bottom: 6px; line-height: 1.3;
+  }
+  .product-desc {
+    font-size: 14px; color: var(--text-dim);
+    font-style: italic; margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  .product-footer { display: flex; align-items: center; justify-content: space-between; }
+  .product-stars { color: var(--gold); font-size: 13px; letter-spacing: 2px; }
+  .product-cta {
+    font-family: 'Cinzel', serif; font-size: 9px;
+    letter-spacing: 2px; color: var(--gold);
+    text-decoration: none; text-transform: uppercase;
+    border-bottom: 1px solid var(--gold-dim);
+    transition: border-color 0.3s, color 0.3s;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .product-cta:hover { color: var(--gold-light); border-color: var(--gold-light); }
+
+  /* ── RITUAL / ABOUT SECTION ── */
+  .ritual {
+    padding: 120px 48px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+    max-width: 1300px; margin: 0 auto;
+  }
+  .ritual-img-wrap {
+    position: relative;
+  }
+  .ritual-img {
+    width: 100%; aspect-ratio: 4/5;
+    object-fit: cover;
+    filter: saturate(0.5) brightness(0.55);
+  }
+  .ritual-img-placeholder {
+    width: 100%; aspect-ratio: 4/5;
+    background: linear-gradient(135deg, #140d1a, #0e0b10);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 100px; opacity: 0.3;
+  }
+  .ritual-frame {
+    position: absolute; inset: 16px;
+    border: 1px solid var(--border);
+    pointer-events: none;
+  }
+  .ritual-gold-bar {
+    position: absolute; bottom: -1px; left: 0;
+    width: 60%; height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  .ritual-text {}
+  .ritual-text .section-label { text-align: left; }
+  .ritual-text .section-title { text-align: left; font-size: clamp(28px, 3.5vw, 42px); }
+  .ritual-body {
+    font-size: 17px; color: var(--text-dim);
+    line-height: 1.9; margin-bottom: 32px;
+  }
+  .ritual-body em { color: var(--gold-light); font-style: normal; }
+
+  .ritual-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; margin-bottom: 40px;
+  }
+  .stat { border-left: 1px solid var(--border); padding-left: 16px; }
+  .stat-num {
+    font-family: 'Cinzel', serif; font-size: 28px;
+    color: var(--gold); font-weight: 600; display: block;
+  }
+  .stat-label {
+    font-size: 12px; color: var(--text-dim);
+    font-style: italic; letter-spacing: 0.5px;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { padding: 100px 48px; background: var(--dark); }
+  .testi-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px; max-width: 1100px; margin: 0 auto;
+  }
+  .testi-card {
+    padding: 36px 32px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.015);
+    position: relative;
+  }
+  .testi-quote {
+    font-size: 60px; line-height: 0.5;
+    color: var(--gold); opacity: 0.3;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 16px; display: block;
+  }
+  .testi-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-style: italic;
+    color: var(--text); line-height: 1.7; margin-bottom: 24px;
+  }
+  .testi-author {
+    font-family: 'Cinzel', serif; font-size: 10px;
+    letter-spacing: 2.5px; color: var(--gold-dim);
+    text-transform: uppercase;
+  }
+  .testi-stars { color: var(--gold); font-size: 12px; margin-bottom: 12px; }
+
+  /* ── NEWSLETTER ── */
+  .newsletter {
+    padding: 100px 48px; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .newsletter-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(201,169,110,0.04) 0%, transparent 70%);
+  }
+  .newsletter-content { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; }
+  .newsletter-form {
+    display: flex; gap: 0; margin-top: 32px;
+    border: 1px solid var(--border);
+  }
+  .newsletter-input {
+    flex: 1; padding: 16px 20px;
+    background: rgba(255,255,255,0.03);
+    border: none; outline: none;
+    color: var(--text); font-family: 'EB Garamond', serif; font-size: 16px;
+  }
+  .newsletter-input::placeholder { color: var(--text-dim); }
+  .newsletter-btn {
+    font-family: 'Cinzel', serif; font-size: 10px;
+    letter-spacing: 2.5px; padding: 0 28px;
+    background: var(--gold); color: var(--black);
+    border: none; cursor: pointer;
+    text-transform: uppercase; white-space: nowrap;
+    transition: background 0.3s;
+  }
+  .newsletter-btn:hover { background: var(--gold-light); }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 64px 48px 32px;
+    border-top: 1px solid var(--border);
+    background: var(--black);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px; max-width: 1300px; margin: 0 auto 48px;
+  }
+
+  .footer-brand img { height: 60px; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(201,169,110,0.3)); }
+  .footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px; font-style: italic;
+    color: var(--text-dim); line-height: 1.7; max-width: 260px;
+  }
+
+  .footer-col-title {
+    font-family: 'Cinzel', serif; font-size: 10px;
+    letter-spacing: 3px; color: var(--gold);
+    text-transform: uppercase; margin-bottom: 20px; display: block;
+  }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 10px; }
+  .footer-links a {
+    font-size: 14px; color: var(--text-dim);
+    text-decoration: none; transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 24px; text-align: center;
+    max-width: 1300px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 12px;
+  }
+  .footer-copy {
+    font-size: 12px; color: var(--text-dim); letter-spacing: 0.5px;
+  }
+  .footer-affiliate {
+    font-size: 11px; color: var(--text-dim); font-style: italic;
+    max-width: 480px; line-height: 1.5;
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .categories { padding: 60px 24px; }
+    .products { padding: 60px 24px; }
+    .ritual { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .testimonials { padding: 60px 24px; }
+    .newsletter { padding: 60px 24px; }
+    footer { padding: 48px 24px 24px; }
+  }
+  @media (max-width: 600px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .newsletter-form { flex-direction: column; }
+    .newsletter-btn { padding: 16px; }
+    .ritual-stats { grid-template-columns: 1fr; }
+  }
+
+  /* ── GOLD SHIMMER TEXT ── */
+  .shimmer {
+    background: linear-gradient(90deg, var(--gold-dim) 0%, var(--gold-light) 40%, var(--gold) 60%, var(--gold-dim) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s linear infinite;
+  }
+  @keyframes shimmer {
+    from { background-position: 0% center; }
+    to   { background-position: 200% center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- Particles -->
+<div id="particles"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">
+    <img src="images/Logo_Icon.png" alt="The Witch's Store">
+  </div>
+ <!-- <ul class="nav-links">
+    <li><a href="category.html">Collections</a></li>
+    <li><a href="category.html?cat=cosmetics">Cosmetics</a></li>
+    <li><a href="category.html?cat=dresses">Dresses</a></li>
+    <li><a href="category.html?cat=bags">Bags</a></li>
+    <li><a href="#about">Our Story</a></li>
+  </ul>-->
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-content">
+   <!-- <img src="Logo_Icon.png" class="hero-logo" alt="The Witch's Store"> -->
+    <p class="hero-eyebrow">Curated Finds · Timeless Beauty · Everyday Magic</p>
+    <h1 class="hero-title shimmer">The Witch's<br>Store</h1>
+    <p class="hero-subtitle">Where dark elegance meets enchanted beauty — handpicked treasures for the modern sorceress.</p>
+    <div class="hero-cta">
+      <a href="category.html" class="btn-primary">Shop on Amazon</a>
+      <a href="#featured" class="btn-ghost">Back</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- FOOTER -->
+<footer>
+  <!--<div class="footer-grid">
+    <div class="footer-brand">
+      <img src="Logo_Icon.png" alt="The Witch's Store">
+      <p class="footer-tagline">Curated finds for the dark feminine. All products link to Amazon. We earn a small commission that keeps the magic alive.</p>
+    </div>
+  </div>-->
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 The Witch's Store. All rights reserved.</span>
+    <span class="footer-affiliate">✦ Affiliate Disclosure: As an Amazon Associate, The Witch's Store earns from qualifying purchases. Links are affiliate links.</span>
+  </div>
+</footer>
+
+<script>
+  // CURSOR
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursor-ring');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  function animateCursor() {
+    cursor.style.transform = `translate(${mx-5}px, ${my-5}px)`;
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) *.12;
+    ring.style.transform = `translate(${rx-16}px, ${ry-16}px)`;
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+
+  // PARTICLES
+  const container = document.getElementById('particles');
+  for (let i = 0; i < 40; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;--dur:${6+Math.random()*12}s;--delay:${Math.random()*8}s;width:${1+Math.random()*2}px;height:${1+Math.random()*2}px;`;
+    container.appendChild(p);
+  }
+
+  // NAV SCROLL
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // SCROLL REVEAL
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
