@@ -68,8 +68,8 @@
     "category": "Cosmetics",
     "badge": "New Arrival",
     "heroEyebrow": "Curated Finds · Timeless Beauty · Everyday Magic",
-    "heroTitle": "Obsidian Eye\nRitual Palette",
-    "heroSubtitle": "Smoke, shadow, and mystery — conjured into one spellbinding palette.",
+    "heroTitle": "ANUA Heartleaf\nDouble Cleansing Duo",
+    "heroSubtitle": "Deep cleansing care with Heartleaf and Quercetinol for fresh, balanced skin.",
     "description": "Refresh your skincare routine with the ANUA Heartleaf Double Cleansing Duo, designed to deeply cleanse while keeping skin feeling comfortable and balanced. This two-step cleansing system combines the Heartleaf Pore Control Cleansing Oil and Quercetinol Deep Cleansing Foam to effectively remove makeup, sunscreen, excess oil, and impurities from the skin.",
     "features": [
       "Complete Two-Step Cleansing System",
@@ -83,13 +83,13 @@
       "shipping": "Free shipping on Amazon Prime",
       "returns": "Easy returns via Amazon"
     },
-    "productImageUrl": "images/products/nails/anua-heartleaf-double-cleansing-duo-cleansing-oil-&-deep-cleansing-foam.png",
-    "breadcrumb": ["Home", "Collections", "Cosmetics","Nails"],
+    "productImageUrl": "images/products/skincare/anua-heartleaf-double-cleansing-duo-cleansing-oil-&-deep-cleansing-foam.png",
+    "breadcrumb": ["Home", "Collections", "Cosmetics", "Skincare"],
     "amazonAffiliateLink": "https://amzn.to/4nuW4qg",
     "finalCtaTitle": "Ready to Bewitch?",
     "finalCtaSubtitle": "Find this treasure on Amazon — free shipping for Prime members.",
-    "stickyBarName": "Obsidian Eye Ritual Palette",
-    "pageTitle": "The Witch's Store – Obsidian Eye Ritual Palette",
+    "stickyBarName": "ANUA Heartleaf Double Cleansing Duo",
+    "pageTitle": "The Witch's Store – ANUA Heartleaf Double Cleansing Duo",
     "heroBgImage": "images/BG_2.jpg"
   }
 ]
