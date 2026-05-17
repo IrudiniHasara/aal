@@ -61,35 +61,35 @@
     "pageTitle": "The Witch's Store – Obsidian Eye Ritual Palette",
     "heroBgImage": "images/BG_2.jpg"
   },
-  {
+ {
     "id": 3,
-    "slug": "anua-heartleaf-double-cleansing-duo-cleansing-oil-and-deep-cleansing-foam",
-    "name": "ANUA Heartleaf Double Cleansing Duo – Cleansing Oil & Deep Cleansing Foam",
+    "slug": "anua",
+    "name": "Dreamy Butter Yellow Summer Nails",
     "category": "Cosmetics",
     "badge": "New Arrival",
     "heroEyebrow": "Curated Finds · Timeless Beauty · Everyday Magic",
-    "heroTitle": "ANUA Heartleaf\nDouble Cleansing Duo",
-    "heroSubtitle": "Deep cleansing care with Heartleaf and Quercetinol for fresh, balanced skin.",
-    "description": "Refresh your skincare routine with the ANUA Heartleaf Double Cleansing Duo, designed to deeply cleanse while keeping skin feeling comfortable and balanced. This two-step cleansing system combines the Heartleaf Pore Control Cleansing Oil and Quercetinol Deep Cleansing Foam to effectively remove makeup, sunscreen, excess oil, and impurities from the skin.",
+    "heroTitle": "Obsidian Eye\nRitual Palette",
+    "heroSubtitle": "Smoke, shadow, and mystery — conjured into one spellbinding palette.",
+    "description": "Step into a world of golden glow and soft pastel magic with the Beetles Lemon Whisper Gel Polish Collection. Inspired by warm sunshine, creamy butter tones, and cozy autumn aesthetics, this enchanting 6-piece gel polish set transforms every manicure into a radiant work of art. From delicate pastel lemon to rich amber yellow, each shade is crafted for elegant nail creations that feel cheerful, modern, and luxurious.",
     "features": [
-      "Complete Two-Step Cleansing System",
-      "Helps Remove Makeup & Excess Oil",
-      "Heartleaf-Infused Formula",
-      "Gentle Daily Care"
+      "6 enchanting yellow gel polish shades",
+      "Butter yellow, pastel lemon, milky yellow & warm amber tones",
+      "Smooth self-leveling gel texture",
+      "Rich high-pigment color payoff"
     ],
     "featuresTitle": "What's Inside the Spell",
-    "rating": 4.6,
+    "rating": 4.5,
     "metaPills": {
       "shipping": "Free shipping on Amazon Prime",
       "returns": "Easy returns via Amazon"
     },
-    "productImageUrl": "images/products/skincare/anua-heartleaf-double-cleansing-duo-cleansing-oil-and-deep-cleansing-foam.png",
-    "breadcrumb": ["Home", "Collections", "Cosmetics", "Skincare"],
-    "amazonAffiliateLink": "https://amzn.to/4nuW4qg",
+    "productImageUrl": "images/products/nails/dreamy-butter-yellow-summer-nails.png",
+    "breadcrumb": ["Home", "Collections", "Cosmetics","Nails"],
+    "amazonAffiliateLink": "https://amzn.to/4nz4bC8",
     "finalCtaTitle": "Ready to Bewitch?",
     "finalCtaSubtitle": "Find this treasure on Amazon — free shipping for Prime members.",
-    "stickyBarName": "ANUA Heartleaf Double Cleansing Duo",
-    "pageTitle": "The Witch's Store – ANUA Heartleaf Double Cleansing Duo",
+    "stickyBarName": "Obsidian Eye Ritual Palette",
+    "pageTitle": "The Witch's Store – Obsidian Eye Ritual Palette",
     "heroBgImage": "images/BG_2.jpg"
   }
 ]
