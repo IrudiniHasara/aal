@@ -62,14 +62,14 @@
     "heroBgImage": "images/BG_2.jpg"
   },
   {
-    "id": 3,
+    "id": 2,
     "slug": "anua-heartleaf-double-cleansing-duo-cleansing-oil-&-deep-cleansing-foam",
     "name": "ANUA Heartleaf Double Cleansing Duo – Cleansing Oil & Deep Cleansing Foam",
-    "category": "SkinCare",
-    "badge": "Best Seller",
+    "category": "Cosmetics",
+    "badge": "New Arrival",
     "heroEyebrow": "Curated Finds · Timeless Beauty · Everyday Magic",
-    "heroTitle": "ANUA Heartleaf\nDouble Cleansing Duo",
-    "heroSubtitle": "Perfect for DIY nail lovers, beauty creators, and anyone who wants fashionable nails without salon appointments.",
+    "heroTitle": "Obsidian Eye\nRitual Palette",
+    "heroSubtitle": "Smoke, shadow, and mystery — conjured into one spellbinding palette.",
     "description": "Refresh your skincare routine with the ANUA Heartleaf Double Cleansing Duo, designed to deeply cleanse while keeping skin feeling comfortable and balanced. This two-step cleansing system combines the Heartleaf Pore Control Cleansing Oil and Quercetinol Deep Cleansing Foam to effectively remove makeup, sunscreen, excess oil, and impurities from the skin.",
     "features": [
       "Complete Two-Step Cleansing System",
@@ -85,12 +85,12 @@
       "returns": "Easy returns via Amazon"
     },
     "productImageUrl": "images/products/nails/anua-heartleaf-double-cleansing-duo-cleansing-oil-&-deep-cleansing-foam.png",
-    "breadcrumb": ["Home", "Collections", "SkinCare", "Cleancer"],
-    "amazonAffiliateLink": "https://amzn.to/4983ABB",
+    "breadcrumb": ["Home", "Collections", "Cosmetics","Nails"],
+    "amazonAffiliateLink": "https://amzn.to/4nuW4qg",
     "finalCtaTitle": "Ready to Bewitch?",
     "finalCtaSubtitle": "Find this treasure on Amazon — free shipping for Prime members.",
-    "stickyBarName": "Midnight Matte Lip Collection",
-    "pageTitle": "The Witch's Store – Midnight Matte Lip Collection",
-    "heroBgImage": "images/BG_1.jpg"
+    "stickyBarName": "Obsidian Eye Ritual Palette",
+    "pageTitle": "The Witch's Store – Obsidian Eye Ritual Palette",
+    "heroBgImage": "images/BG_2.jpg"
   }
 ]
