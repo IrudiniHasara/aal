@@ -91,5 +91,34 @@
     "stickyBarName": "ANUA Heartleaf Double Cleansing Duo",
     "pageTitle": "The Witch's Store – ANUA Heartleaf Double Cleansing Duo",
     "heroBgImage": "images/BG_2.jpg"
-  }
+  },
+   {
+    "id": 4,
+    "slug": "elizabeth-arden-new-york-retinol-+hpr-ceramide-rapid-skin-renewing-water-cream",
+    "name": "Elizabeth Arden New York Retinol + HPR Ceramide Rapid Skin Renewing Water Cream",
+    "category": "Cosmetics",
+    "badge": "New Arrival",
+    "heroEyebrow": "Radiant Glow · Advanced Care · Effortless Luxury",
+    "heroTitle": "ELIZABETH ARDEN RETINOL\n+ HPR CERAMIDE WATER CREAM",
+    "heroSubtitle": "Rapid wrinkle and barrier care with Retinol and Ceramides for smooth, firm skin.",
+    "description": "Refresh your skincare routine with the Elizabeth Arden Retinol + HPR Ceramide Rapid Skin Renewing Water Cream, a high-performance formula designed to deeply transform and restore your skin. Combining advanced Retinol and HPR technology with essential Ceramides, this lightweight water cream speeds up cell turnover while strengthening your skin's natural moisture barrier. Engineered to target multiple aging concerns, it delivers optimal hydration and leaves the face and neck looking remarkably smooth, firm, and youthfully radiant.",
+    "features": [
+      "Barrier Strengthening",
+      "Texture & Tone Perfection",
+      "Pore & Moisture Control",
+      "Gentle Daily Treatment"
+    ],
+    "featuresTitle": "What's Inside the Spell",
+    "rating": 4.6,
+    "metaPills": {
+      "returns": "Easy returns via Amazon"
+    },
+    "productImageUrl": ".png",
+    "breadcrumb": ["Home", "Collections", "Cosmetics", "Skincare"],
+    "amazonAffiliateLink": "https://amzn.to/4gmfImV",
+    "finalCtaTitle": "Ready to Bewitch?",
+    "finalCtaSubtitle": "Find this treasure on Amazon — free shipping for Prime members.",
+    "stickyBarName": "ANUA Heartleaf Double Cleansing Duo",
+    "pageTitle": "The Witch's Store – ANUA Heartleaf Double Cleansing Duo",
+    "heroBgImage": "images/BG_2.jpg" 
 ]
