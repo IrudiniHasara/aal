@@ -122,13 +122,14 @@
     "heroBgImage": "images/BG_2.jpg" 
   },
  {
+{
     "id": 5,
     "slug": "Iconic-London-Underglow-Blurring-Primer-Gel-Base-for-Face",
     "name": "Iconic London Underglow Blurring Primer – Gel Base for Face",
     "category": "Cosmetics",
     "badge": "New Arrival",
     "heroEyebrow": "Iconic Style • Effortless Glamour • Daily Radiance",
-    "heroTitle": "EIconic London Underglow Blurring Primer",
+    "heroTitle": "Iconic London Underglow Blurring Primer",
     "heroSubtitle": "A dynamic, lightweight gel primer that instantly melts over the skin to blur and illuminate, creating the perfect flawless-looking canvas for your makeup.",
     "description": "Enhance your beauty routine with the Iconic London Underglow Blurring Primer, a luxurious gel that instantly melts to create the perfect flawless-looking canvas. Ideal for all skin tones and types, it's the universal shade for a flawless, long-lasting finish.",
     "features": [
@@ -151,5 +152,5 @@
     "stickyBarName": "Iconic London",
     "pageTitle": "The Witch's Store – Iconic London",
     "heroBgImage": "images/BG_2.jpg" 
-  } 
+  }
 ]
