@@ -113,13 +113,13 @@
       "shipping": "Free shipping on Amazon Prime",
       "returns": "Easy returns via Amazon"
     },
-    "productImageUrl": "images/products/skincare/elizabeth-arden-new-york-retinol-plus-hpr-ceramide-rapid-skin-renewing-water-cream.png",
+    "productImageUrl": "images/products/skincare/anua-heartleaf-double-cleansing-duo-cleansing-oil-and-deep-cleansing-foam.png",
     "breadcrumb": ["Home", "Collections", "Cosmetics", "Skincare"],
-    "amazonAffiliateLink": "https://amzn.to/4gmfImV",
+    "amazonAffiliateLink": "https://amzn.to/4fEtNva",
     "finalCtaTitle": "Ready to Bewitch?",
     "finalCtaSubtitle": "Find this treasure on Amazon — free shipping for Prime members.",
-    "stickyBarName": "Elizabeth Arden New York",
-    "pageTitle": "The Witch's Store – Elizabeth Arden New York",
+    "stickyBarName": "Iconic London",
+    "pageTitle": "The Witch's Store – Iconic London",
     "heroBgImage": "images/BG_2.jpg" 
-  },
+  }
 ]
