@@ -152,5 +152,36 @@
     "stickyBarName": "Colorescience Peptide Lip Shine SPF 30",
     "pageTitle": "The Witch's Store – Colorescience",
     "heroBgImage": "images/BG_2.jpg" 
+  },
+{
+    "id": 6,
+    "slug": "Colorescience-peptide-lip-shine-spf-30",
+    "name": "Colorescience peptide lip shine spf 30",
+    "category": "Cosmetics",
+    "badge": "New Arrival",
+    "heroEyebrow": "Hydrate • Shine • Defend",
+    "heroTitle": "Colorescience peptide lip shine spf 30",
+    "heroSubtitle": "Clinically Proven Peptide Formula to Plump, Hydrate, & Defend. All-Mineral Actives, Dye-Free Buildable Color.",
+    "description": "Advanced Clinically Proven Peptide Formula designed to deeply hydrate, plump, condition, and nourish lips while offering robust defense against free radicals and environmental stressors. Formulated with 100% all-mineral actives and a dye-free, buildable tint for a natural, healthy glow.",
+    "features": [
+      "Plumps, Hydrates & Conditions",
+      "Free Radical Defense",
+      "All-Mineral Actives",
+      "Dye-Free Buildable Color"
+    ],
+    "featuresTitle": "What's Inside the Spell",
+    "rating": 4.5,
+    "metaPills": {
+      "shipping": "Free shipping on Amazon Prime",
+      "returns": "Easy returns via Amazon"
+    },
+    "productImageUrl": "images/products/skincare/Colorescience-Peptide-Lip-Shine-SPF-30.png",
+    "breadcrumb": ["Home", "Collections", "Cosmetics", "Skincare"],
+    "amazonAffiliateLink": "https://amzn.to/4fxsQDM",
+    "finalCtaTitle": "Ready to Bewitch?",
+    "finalCtaSubtitle": "Find this treasure on Amazon — free shipping for Prime members.",
+    "stickyBarName": "Colorescience Peptide Lip Shine SPF 30",
+    "pageTitle": "The Witch's Store – Colorescience",
+    "heroBgImage": "images/BG_2.jpg" 
   }
 ]
